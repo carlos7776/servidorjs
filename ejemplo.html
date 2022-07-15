@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mi priemra pagina js</title>
+    <!-- aca se asigna js -->
+    <script type="text/javascript">
+        // se declara la funcion traerPais q es asincrona o sea q espera para ejecutarse
+        async function traerPais()
+        {
+            // aca se esta llamando un resultado por medio de una API q identifica de que pais es el nombre escrito usa AWAIT FETCH para esperar la respuesta de la pagina web"API"
+            const respuesta = await fetch("https://api.nationalize.io?name=carlos");
+            // si encutra q por alguna razon la pagina no carga saldra error  
+            if(!respuesta.ok){
+            let oops="404 no encuentro nada";
+            alert(oops);
+            throw new Error(oops);
+        }
+    // aca se declara que NOMBRE contenga los resultados q se cargan en la pagina 
+    const nombre = respuesta.json();
+    // aca retorna lo que contenga la Constante NOMBRE
+    return nombre;
+        }        
+    // muestra el resultado que arrojo la pagina por orden y se le coloca la posion q debe empezar en este caso[0] 
+    function mostrarNombre(n)
+    {
+        document.getElementById("mensaje").innerHTML = n.country[2].country_id ;
+    }
+// muestra es resultado  q se quiere  obtener en este caso nombre y pais del nombre
+traerPais().then(mostrarNombre);
+
+    </script>
+</head>
+<body>  
+    <h1>titulo de proyecto serio</h1>
+    <p>este archivo es mio</p>
+    <p id="mensaje">cargando,,,</p>
+
+    <script type="text/javascript">
+        mostrarNombre("pepita <strong>hola</strong>");
+    </script>
+</body>
+</html>
