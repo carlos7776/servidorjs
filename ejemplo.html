@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>mi priemra pagina js</title>
+    <link rel="stylesheet" href="style.css">
     <!-- aca se asigna js -->
     <script type="text/javascript">
         // se declara la funcion traerPais q es asincrona o sea q espera para ejecutarse
         async function traerPais()
         {
             // aca se esta llamando un resultado por medio de una API q identifica de que pais es el nombre escrito usa AWAIT FETCH para esperar la respuesta de la pagina web"API"
-            const respuesta = await fetch("https://api.nationalize.io?name=carlos");
+            const respuesta = await fetch("https://api.nationalize.io?name=paola");
             // si encutra q por alguna razon la pagina no carga saldra error  
             if(!respuesta.ok){
             let oops="404 no encuentro nada";
@@ -24,7 +25,7 @@
     // muestra el resultado que arrojo la pagina por orden y se le coloca la posion q debe empezar en este caso[0] 
     function mostrarNombre(n)
     {
-        document.getElementById("mensaje").innerHTML = n.country[2].country_id ;
+        document.getElementById("mensaje").innerHTML = n.country[0].country_id ;
     }
 // muestra es resultado  q se quiere  obtener en este caso nombre y pais del nombre
 traerPais().then(mostrarNombre);
@@ -32,12 +33,15 @@ traerPais().then(mostrarNombre);
     </script>
 </head>
 <body>  
-    <h1>titulo de proyecto serio</h1>
-    <p>este archivo es mio</p>
-    <p id="mensaje">cargando,,,</p>
-
-    <script type="text/javascript">
-        mostrarNombre("pepita <strong>hola</strong>");
+    <h1 class="titulo">CONOCE MAS</h1>
+    <p class="parrafo">aca sabras de donde es tu nombre</p>
+    <script>
+        let n1 = prompt("Dime tu nombre");
+        document.write("<i>hola </i> "+ n1 + "<i>tu lugar de origen es </i> " );
+        
     </script>
+    <p id="mensaje" class="n1">cargando,,,</p>
+
+    
 </body>
 </html>

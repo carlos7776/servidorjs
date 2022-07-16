@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 89px;
+    text-align: center;
+    background-color: rgb(150, 193, 101);
+    color: rgb(4, 157, 252);
+    
+}
+.titulo{
+    display: grid;
+    background-color: red;
+    border-radius: 50%;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 3rem;
+    padding: 90px;
+    border: 2px solid rgb(255, 157, 0 ,0.6);
+}
+.parrafo{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 40px;
+    padding: 50px;
+}
+#mensaje{
+    color: rgb(0, 0, 0);
+    padding: 40px;
+    text-align: center;
+    font-size: 90px;
+    color: rgb(82, 63, 205);
+}
+i{  
+    color: rgb(0, 0, 0);
+    display: grid;
+    text-align: center;
+    font-size: 59px;
+    padding: 50px;
+    
+}
+
